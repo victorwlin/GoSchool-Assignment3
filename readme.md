@@ -1,19 +1,19 @@
 #### General Description
 
-For this assignment, I converted the prototype submitted for Go Advanced to a client-server setup. There are four main menus that the user can interact with.
+For this assignment, I converted the prototype submitted for Go Advanced (Assignment 2) to a client-server setup. There are four main menus that the user can interact with.
 
-1.  **Login**
+1.  **Login**  
     The user begins on the login screen, where he/she can choose to either login with username and password or sign up. For purposes of testing, the application comes with two existing users, "Victor" and "Tokey". The password for both users is "f". Signing up creates a new user. Both logging in and signing up will create a new cookie. Logging out deletes the cookie. Passwords are stored as a hash.
 
-2.  **Friends**
+2.  **Friends**  
     Once the user either logs in or signs up, he/she is taken to the friends menu, which displays a table with all his/her friends. Name, group, date of last contact, desired frequency of contact, and recommended date of next contact are all displayed in the table. The table can be sorted by clicking on the header of each column.
 
-        From this menu, the user can add a friend, add a group, edit a group, delete a group, or log out. He/she can also go to the account management menu or search for a friend to update, edit, or delete. Searching leads the user to the search menu.
+    From this menu, the user can add a friend, add a group, edit a group, delete a group, or log out. He/she can also go to the account management menu or search for a friend to update, edit, or delete. Searching leads the user to the search menu.
 
-3.  **Account Management**
+3.  **Account Management**  
     The account management menu displays the username of the user and allows him/her to edit username, delete user, go back to friends menu, or log out.
 
-4.  **Search**
+4.  **Search**  
     The search menu displays the name, group, desired frequency of contact, recommended date of next contact, and entire history of contact for a single friend. It also allows the user to add a new date of last contact. There are also options to edit friend details, delete friend, go back to friends menu, or log out.
 
 #### New Main Features Related to Go in Action 1

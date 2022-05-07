@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Friend Tracker</title>
+  </head>
+
+  <body>
+    <h1>Add Friend</h1>
+
+    <form method="post">
+      <p>Friend Name</p>
+      <input type="text" name="friendname" placeholder="Friend Name" /><br />
+
+      <p>Group</p>
+      {{ range . }}
+        <input type="radio" id="{{ . }}" name="group" value="{{ . }}" />
+        <label for="{{ . }}">{{ . }}</label><br />
+      {{ end }}
+
+
+      <br />
+
+      <p>Date of Last Contact</p>
+      <input
+        type="date"
+        name="lastcontact"
+        placeholder="Date of Last Contact"
+      /><br />
+
+      <br />
+
+      <p>Desired Frequency of Contact (in days)</p>
+      <input
+        type="number"
+        name="desiredfreq"
+        placeholder="Desired Frequency of Contact (in days)"
+      /><br />
+
+      <br />
+
+      <input type="submit" />
+    </form>
+
+    <br />
+
+    <a href="/friends/">Back</a>
+  </body>
+</html>

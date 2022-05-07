@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Friend Tracker</title>
+  </head>
+
+  <body>
+    <h1>Edit Group</h1>
+
+    <form method="post">
+      <p>Which group would you like to edit?</p>
+      {{ range . }}
+        <input type="radio" id="{{ . }}" name="group" value="{{ . }}" />
+        <label for="{{ . }}">{{ . }}</label><br />
+      {{ end }}
+
+
+      <p>New Group Name</p>
+      <input type="text" name="newgroup" placeholder="New Group Name" /><br />
+
+      <br />
+
+      <input type="submit" />
+    </form>
+
+    <br />
+
+    <a href="/friends/">Back</a>
+  </body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Friend Tracker</title>
+  </head>
+
+  <body>
+    <h1>Friends</h1>
+
+    <table>
+      <tr>
+        <th><a href="/friends/?sort=friend">Friend</a></th>
+        <th><a href="/friends/?sort=group">Group</a></th>
+        <th><a href="/friends/?sort=lastcontact">Date of Last Contact</a></th>
+        <th>
+          <a href="/friends/?sort=desiredfreq"
+            >Desired Frequency of Contact (in days)</a
+          >
+        </th>
+        <th>
+          <a href="/friends/?sort=recdate">Recommended Date of Next Contact</a>
+        </th>
+      </tr>
+      {{ range . }}
+        <tr>
+          <td>{{ .Name }}</td>
+          <td>{{ .Group }}</td>
+          <td>{{ .LastContact }}</td>
+          <td>{{ .DesiredFreqOfContact }}</td>
+          <td>{{ .RecDateOfNextContact }}</td>
+        </tr>
+      {{ end }}
+    </table>
+
+    <br />
+
+    <form method="post">
+      <p>Search for Friends to Update, Edit, or Delete</p>
+      <input type="text" name="friend" placeholder="Search" /><br />
+
+      <br />
+
+      <input type="submit" />
+    </form>
+
+    <br />
+
+    <a href="/addfriend/">Add Friend</a>
+    <br />
+    <a href="/addgroup/">Add Group</a>
+    <br />
+    <a href="/editgroup/">Edit Group</a>
+    <br />
+    <a href="/deletegroup/">Delete Group</a>
+    <br />
+    <a href="/accountmanagement/">Account Management</a>
+    <br />
+    <a href="/logout/">Log Out</a>
+  </body>
+</html>

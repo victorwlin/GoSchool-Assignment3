@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Friend Tracker</title>
+  </head>
+
+  <body>
+    <h1>Edit Friend Details</h1>
+
+    <p>Leave fields that you do not want to change blank.</p>
+
+    <br />
+
+    <form method="post">
+      <p>Current Friend Name: {{ .Name }}</p>
+      <input
+        type="text"
+        name="newFriendName"
+        placeholder="New Friend Name"
+      /><br />
+
+      <br />
+
+      <p>Current Group: {{ .Group }}</p>
+      <p>New Group:</p>
+      {{ range .AvailableGroups }}
+        <input type="radio" id="{{ . }}" name="newGroup" value="{{ . }}" />
+        <label for="{{ . }}">{{ . }}</label><br />
+      {{ end }}
+
+
+      <br />
+
+      <p>Current Date of Last Contact: {{ .LastContact }}</p>
+      <p>New Date of Last Contact:</p>
+      <input
+        type="date"
+        name="newLastContact"
+        placeholder="New Date of Last Contact"
+      /><br />
+
+      <br />
+
+      <p>
+        Current Desired Frequency of Contact (in days):
+        {{ .DesiredFreqOfContact }}
+      </p>
+      <input
+        type="number"
+        name="newDesiredFreq"
+        placeholder="New Desired Frequency of Contact (in days)"
+      /><br />
+
+      <br />
+
+      <input type="submit" />
+    </form>
+
+    <br />
+
+    <a href="/search/?friend={{ .Name }}">Back to Friend Details</a>
+  </body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Friend Tracker</title>
+  </head>
+
+  <body>
+    <h1>Friend Details</h1>
+
+    <p>Name: {{ .Name }}</p>
+    <p>Group: {{ .Group }}</p>
+    <p>Desired Frequency of Contact (in days): {{ .DesiredFreqOfContact }}</p>
+    <p>Recommended Date of Next Contact: {{ .RecDateOfNextContact }}</p>
+
+    <br />
+
+    <p>History of Contact</p>
+    {{ range .HistoryOfContact }}
+      <p>{{ . }}</p>
+    {{ end }}
+
+
+    <br />
+
+    <form method="post">
+      <p>Add New Date of Last Contact</p>
+      <input
+        type="date"
+        name="newLastContact"
+        placeholder="Date of Last Contact"
+      /><br />
+
+      <br />
+
+      <input type="submit" />
+    </form>
+
+    <br />
+    <br />
+
+    <a href="/editfrienddetails/?friend={{ .Name }}">Edit Friend Details</a>
+    <br />
+    <a href="/deletefriend/?friend={{ .Name }}">Delete Friend</a>
+    <br />
+    <a href="/friends/">Back to Friends Menu</a>
+    <br />
+    <a href="/logout/">Log Out</a>
+  </body>
+</html>
